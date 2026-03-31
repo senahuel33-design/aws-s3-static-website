@@ -29,8 +29,11 @@ aws-s3-static-website
 
 ## Problems and Solutions
 
-###Problem 1 - Permission/Bucket Policy issues
+###Problem 1 - Access Denied
+![Access Denied](./screenshots/403%20Denied%20Forbidden.PNG)
 
 ## What I Learned
+###Problem 1 - Access Denied
+Always pay attention to the Bucket setting and allow public access.
 
 ## Future Improvements
