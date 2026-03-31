@@ -26,3 +26,11 @@ aws-s3-static-website
 ├── architecture/
 │
 └── README.md
+
+## Problems and Solutions
+
+###Problem 1 - Permission/Bucket Policy issues
+
+## What I Learned
+
+## Future Improvements
