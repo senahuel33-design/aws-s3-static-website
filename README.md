@@ -1,4 +1,19 @@
 # aws-s3-static-website
+# AWS S3 Static Website
+
+## Overview
+This project demonstrates how to host a static website using Amazon S3 and distribute it using CloudFront.
+
+## Architecture
+User → CloudFront → S3
+
+## Services Used
+- Amazon S3
+- Amazon CloudFront
+- AWS IAM
+
+## Project Structure
+
 aws-s3-static-website
 │
 ├── website/
