@@ -56,7 +56,7 @@ Disable Block Public Access and configure bucket policy.
 
 ### 4. Create CloudFront Distribution
 Create a CloudFront distribution pointing to the S3 bucket.
-![CloudFront Distribution](./screenshots/cloudfront/distribution-created.png)
+![CloudFront Distribution](<screenshots/S3 Screenshots/CloudFront-Distribution.PNG>)
 
 ### 5. Access Website via CloudFront
 Access the website using the CloudFront domain name.
