@@ -48,7 +48,7 @@ Create an S3 bucket and upload the website files.
 
 ### 2. Enable Static Website Hosting
 Enable static website hosting in the S3 bucket properties.
-![Static Hosting](./screenshots/s3/static-hosting-enabled.png)
+![Static Hosting](<screenshots/S3 Screenshots/Enable-static-website-hosting-in-the-S3-bucket-properties.PNG>)
 
 ### 3. Configure Public Access
 Disable Block Public Access and configure bucket policy.
