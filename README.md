@@ -48,11 +48,11 @@ Create an S3 bucket and upload the website files.
 
 ### 2. Enable Static Website Hosting
 Enable static website hosting in the S3 bucket properties.
-![Static Hosting](<screenshots/S3 Screenshots/Enable-static-website-hosting-in-the-S3-bucket-properties.PNG>)
+![Static Hosting](<screenshots/S3 Screenshots/Enable-static-website-hosting-in-the-S3-bucket-properties..PNG>)
 
 ### 3. Configure Public Access
 Disable Block Public Access and configure bucket policy.
-![Public Access](./screenshots/s3/public-access-settings.png)
+![Public Access](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 ### 4. Create CloudFront Distribution
 Create a CloudFront distribution pointing to the S3 bucket.
