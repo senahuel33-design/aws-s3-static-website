@@ -44,7 +44,7 @@ aws-s3-static-website
 
 ### 1. Create S3 Bucket
 Create an S3 bucket and upload the website files.
-![S3 Bucket](./screenshots/s3/bucket-created.png)
+![S3 Bucket](<screenshots/S3 Screenshots/S3 static website files.PNG>)
 
 ### 2. Enable Static Website Hosting
 Enable static website hosting in the S3 bucket properties.
