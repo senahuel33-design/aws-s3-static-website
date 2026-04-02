@@ -73,7 +73,7 @@ Create a CloudFront distribution pointing to the S3 bucket.
 
 ### 6. Access Website via CloudFront
 Access the website using the CloudFront domain name.
-![Website Working](./screenshots/cloudfront/domain-working.png)
+![Website Working](Access-Website-via-CloudFront.PNG)
 
 # Part 2 – Static Website Using CloudFront OAC (Private Bucket – Recommended)
 
