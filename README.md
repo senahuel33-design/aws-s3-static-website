@@ -1,17 +1,26 @@
 # AWS S3 Static Website with CloudFront
 
 ## Overview
-This project demonstrates how to host a static website using Amazon S3 and distribute it securely using CloudFront.
+This project demonstrates two different ways to host a static website using Amazon S3 and distribute it using CloudFront:
 
-The project includes S3 static website hosting, CloudFront distribution, IAM permissions, and troubleshooting common errors such as Access Denied (403).
+1. Using S3 Static Website Endpoint (Public Bucket)
+2. Using S3 REST API with CloudFront Origin Access Control (Private Bucket – Recommended)
+
+The project also includes IAM permissions and troubleshooting common errors such as Access Denied (403).
 
 ---
 
 ## Architecture
-User → CloudFront → S3
 
-![Architecture](./architecture/architecture-diagram.png)
+### Architecture 1 – Public S3 Website Endpoint
+User → CloudFront → S3 Website Endpoint (Public Bucket)
 
+![Architecture Public](./architecture/architecture-public.png)
+
+### Architecture 2 – Private S3 with OAC (Recommended)
+User → CloudFront → Origin Access Control → S3 (Private Bucket)
+
+![Architecture Private](./architecture/architecture-private.png)
 ---
 
 ## Services Used
@@ -54,15 +63,62 @@ Enable static website hosting in the S3 bucket properties.
 Disable Block Public Access and configure bucket policy.
 ![Public Access](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
-### 4. Create CloudFront Distribution
+### 4. Access Website via S3 Website Endpoint
+Access the website using the S3 static website endpoint URL.
+![S3 Website](./screenshots/s3/s3-website-endpoint.png)
+
+### 5. Create CloudFront Distribution (Website Endpoint)
 Create a CloudFront distribution pointing to the S3 bucket.
 ![CloudFront Distribution](<screenshots/S3 Screenshots/CloudFront-Distribution.PNG>)
 
-### 5. Access Website via CloudFront
+### 6. Access Website via CloudFront
 Access the website using the CloudFront domain name.
 ![Website Working](./screenshots/cloudfront/domain-working.png)
 
+# Part 2 – Static Website Using CloudFront OAC (Private Bucket – Recommended)
+
+### 1. Create Private S3 Bucket
+Create a new S3 bucket and keep Block Public Access enabled so the bucket remains private.
+![Private Bucket](./screenshots/s3/private-bucket.png)
+
+### 2. Upload Website Files
+Upload the website files (index.html, style.css, error.html) to the private S3 bucket.
+![Upload Files](./screenshots/s3/upload-files-private.png)
+
+### 3. Create CloudFront Distribution
+Create a CloudFront distribution and use the S3 REST API endpoint as the origin.
+![CloudFront REST](./screenshots/cloudfront/cloudfront-rest-origin.png)
+
+### 4. Configure Origin Access Control (OAC)
+Create and attach an Origin Access Control so CloudFront can securely access the private S3 bucket.
+![OAC](./screenshots/cloudfront/oac.png)
+
+### 5. Update Bucket Policy
+Update the S3 bucket policy to allow access only from CloudFront, keeping the bucket private.
+![Bucket Policy](./screenshots/s3/bucket-policy-oac.png)
+
+### 6. Configure Custom Error Pages
+Configure CloudFront custom error responses so index.html loads correctly when accessing the root URL.
+![Error Pages](./screenshots/cloudfront/error-pages.png)
+
+### 7. Access Website via CloudFront
+Access the website securely using the CloudFront domain name.
+![CloudFront Website](./screenshots/cloudfront/domain-working-private.png)
+
 ---
+
+## Architecture Comparison
+
+| Feature | S3 Website Endpoint | CloudFront + OAC |
+|--------|--------------------|------------------|
+| Bucket Public           | Yes | No |
+| Security                | Low | High |
+| Recommended              | No | Yes |
+| Supports HTTPS| Via CloudFront | Yes |
+| Production Ready         | No | Yes |
+
+**Conclusion:**
+The recommended architecture is using CloudFront with Origin Access Control and a private S3 bucket.
 
 ## Problems and Solutions
 
@@ -86,12 +142,13 @@ Understanding S3 permissions and public access settings is critical when hosting
 
 ## What I Learned
 - How to host a static website using Amazon S3
+- Difference between S3 Website Endpoint and S3 REST API
 - How CloudFront works as a CDN
+- How to configure Origin Access Control (OAC)
 - How to configure S3 bucket policies
 - Troubleshooting Access Denied errors
 - Basic AWS architecture design
 - Importance of IAM and permissions
-
 ---
 
 ## Future Improvements
