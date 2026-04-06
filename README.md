@@ -79,11 +79,11 @@ Access the website using the CloudFront domain name.
 
 ### 1. Create Private S3 Bucket
 Create a new S3 bucket and keep Block Public Access enabled so the bucket remains private.
-![Private Bucket](./screenshots/s3/private-bucket.png)
+![Private Bucket](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 ### 2. Upload Website Files
 Upload the website files (index.html, style.css, error.html) to the private S3 bucket.
-![Upload Files](./screenshots/s3/upload-files-private.png)
+![Upload Files](<screenshots/S3 Screenshots/S3 static website files.PNG>)
 
 ### 3. Create CloudFront Distribution
 Create a CloudFront distribution and use the S3 REST API endpoint as the origin.
@@ -91,11 +91,11 @@ Create a CloudFront distribution and use the S3 REST API endpoint as the origin.
 
 ### 4. Configure Origin Access Control (OAC)
 Create and attach an Origin Access Control so CloudFront can securely access the private S3 bucket.
-![OAC](./screenshots/cloudfront/oac.png)
+![OAC](<screenshots/Configure-Origin-Access-Control-(OAC).PNG>)
 
 ### 5. Update Bucket Policy
 Update the S3 bucket policy to allow access only from CloudFront, keeping the bucket private.
-![Bucket Policy](./screenshots/s3/bucket-policy-oac.png)
+![Bucket Policy](<screenshots/S3 Screenshots/Solution/New-CloudFront-policy-to-the-S3-bucket-policy.PNG>)
 
 ### 6. Configure Custom Error Pages
 Configure CloudFront custom error responses so index.html loads correctly when accessing the root URL.
@@ -124,20 +124,37 @@ The recommended architecture is using CloudFront with Origin Access Control and 
 
 ### Problem 1 – Access Denied (403)
 When accessing the website, a 403 Access Denied error appeared.
-![403 Error](./screenshots/s3/403-error.png)
+![403 Error](<screenshots/S3 Screenshots/S3 Mistakes/403 Denied Forbidden.PNG>)
 
 **Cause:**
 The S3 bucket was blocking public access.
 
-**Solution:**
+### Solution 1 - Access Denied (403)
 - Disabled Block Public Access
 - Added bucket policy to allow public read access
 
-![Solution](./screenshots/solutions/fix-403.png)
+![Solution](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 **What I Learned:**
 Understanding S3 permissions and public access settings is critical when hosting static websites.
 
+
+
+
+
+### Problem 2 – Access Denied (403) (CloudFront)
+
+### Solution 2 - Access Denied (403) (CloudFront)
+ - S3 bucket policy fixed, I linked the new CloudFront policy to the S3 bucket policy
+   ![Solution](<screenshots/S3 Screenshots/Solution/New-CloudFront-policy-to-the-S3-bucket-policy.PNG>)
+ - Wrong Origin settled in CloudFront
+   ![Solution](<screenshots/S3 Screenshots/Solution/Unnecessary-origin-deleted.PNG>)
+
+**Cause:**
+
+**What I Learned:**
+
+**Solution:**
 ---
 
 ## What I Learned
