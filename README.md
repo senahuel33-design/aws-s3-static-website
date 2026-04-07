@@ -15,12 +15,12 @@ The project also includes IAM permissions and troubleshooting common errors such
 ### Architecture 1 – Public S3 Website Endpoint
 User → CloudFront → S3 Website Endpoint (Public Bucket)
 
-![Architecture Public](./architecture/architecture-public.png)
+![Architecture Public](<architecture/architecture-public.png>)
 
 ### Architecture 2 – Private S3 with OAC (Recommended)
 User → CloudFront → Origin Access Control → S3 (Private Bucket)
 
-![Architecture Private](./architecture/architecture-private.png)
+![Architecture Private](<architecture/architecture-private.png>)
 ---
 
 ## Services Used
@@ -44,6 +44,8 @@ aws-s3-static-website
 │   └── solutions/
 │
 ├── architecture/
+    ├── architecture-public.png
+│   └── architecture-private.png
 │
 └── README.md
 
