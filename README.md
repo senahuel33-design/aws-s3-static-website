@@ -101,7 +101,7 @@ Update the S3 bucket policy to allow access only from CloudFront, keeping the bu
 
 ### 6. Configure Custom Error Pages
 Configure CloudFront custom error responses so index.html loads correctly when accessing the root URL.
-![Error Pages](./screenshots/cloudfront/error-pages.png)
+![Error Pages](<screenshots/CloudFront/Configure-Custom-Error-Pages.PNG>)
 
 ### 7. Access Website via CloudFront
 Access the website securely using the CloudFront domain name.
