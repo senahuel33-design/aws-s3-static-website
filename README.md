@@ -67,7 +67,7 @@ Disable Block Public Access and configure bucket policy.
 
 ### 4. Access Website via S3 Website Endpoint
 Access the website using the S3 static website endpoint URL.
-![S3 Website](./screenshots/s3/s3-website-endpoint.png)
+![S3 Website](<screenshots/S3 Screenshots/Access-Website-via-S3-Website-Endpoint.PNG>)
 
 ### 5. Create CloudFront Distribution (Website Endpoint)
 Create a CloudFront distribution pointing to the S3 bucket.
