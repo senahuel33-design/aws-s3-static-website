@@ -15,7 +15,7 @@ The project also includes IAM permissions and troubleshooting common errors such
 ### Architecture 1 – Public S3 Website Endpoint
 User → CloudFront → S3 Website Endpoint (Public Bucket)
 
-![Architecture Public](<architecture/architecture-public.png>)
+![Architecture Public](<architecture/architecture-public.PNG>)
 
 ### Architecture 2 – Private S3 with OAC (Recommended)
 User → CloudFront → Origin Access Control → S3 (Private Bucket)
@@ -89,7 +89,7 @@ Upload the website files (index.html, style.css, error.html) to the private S3 b
 
 ### 3. Create CloudFront Distribution
 Create a CloudFront distribution and use the S3 REST API endpoint as the origin.
-![CloudFront REST](./screenshots/cloudfront/cloudfront-rest-origin.png)
+![CloudFront REST](<screenshots/S3 Screenshots/CloudFront-Distribution-OAC.PNG>)
 
 ### 4. Configure Origin Access Control (OAC)
 Create and attach an Origin Access Control so CloudFront can securely access the private S3 bucket.
