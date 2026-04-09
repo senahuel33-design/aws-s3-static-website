@@ -105,7 +105,7 @@ Configure CloudFront custom error responses so index.html loads correctly when a
 
 ### 7. Access Website via CloudFront
 Access the website securely using the CloudFront domain name.
-![CloudFront Website](<screenshots/S3 Screenshots/Access-Website-via-CloudFront.PNG>)
+![CloudFront Website](<screenshots/CloudFront/Access-Website-via-CloudFront.PNG>)
 
 ---
 
