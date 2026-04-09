@@ -71,11 +71,11 @@ Access the website using the S3 static website endpoint URL.
 
 ### 5. Create CloudFront Distribution (Website Endpoint)
 Create a CloudFront distribution pointing to the S3 bucket.
-![CloudFront Distribution](<screenshots/S3 Screenshots/CloudFront-Distribution.PNG>)
+![CloudFront Distribution](<screenshots/S3 Screenshots/Access-Website-via-S3-Website-Endpoint.PNG>)
 
 ### 6. Access Website via CloudFront
 Access the website using the CloudFront domain name.
-![Website Working](<screenshots/S3 Screenshots/Access-Website-via-CloudFront.PNG>)
+![Website Working](<screenshots/CloudFront/Access-Website-via-CloudFront.PNG>)
 
 # Part 2 – Static Website Using CloudFront OAC (Private Bucket – Recommended)
 
@@ -89,11 +89,11 @@ Upload the website files (index.html, style.css, error.html) to the private S3 b
 
 ### 3. Create CloudFront Distribution
 Create a CloudFront distribution and use the S3 REST API endpoint as the origin.
-![CloudFront REST](<screenshots/S3 Screenshots/CloudFront-Distribution-OAC.PNG>)
+![CloudFront REST](<screenshots/CloudFront/CloudFront-Distribution.PNG>)
 
 ### 4. Configure Origin Access Control (OAC)
 Create and attach an Origin Access Control so CloudFront can securely access the private S3 bucket.
-![OAC](<screenshots/Configure-Origin-Access-Control-(OAC).PNG>)
+![OAC](<screenshots/CloudFront/Configure-Origin-Access-Control-(OAC).PNG>)
 
 ### 5. Update Bucket Policy
 Update the S3 bucket policy to allow access only from CloudFront, keeping the bucket private.
