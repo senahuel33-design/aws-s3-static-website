@@ -71,7 +71,7 @@ Access the website using the S3 static website endpoint URL.
 
 ### 5. Create CloudFront Distribution (Website Endpoint)
 Create a CloudFront distribution pointing to the S3 bucket.
-![CloudFront Distribution](<screenshots/S3 Screenshots/Access-Website-via-S3-Website-Endpoint.PNG>)
+![CloudFront Distribution](<screenshots/CloudFront/CloudFront-Distribution.PNG>)
 
 ### 6. Access Website via CloudFront
 Access the website using the CloudFront domain name.
@@ -97,7 +97,7 @@ Create and attach an Origin Access Control so CloudFront can securely access the
 
 ### 5. Update Bucket Policy
 Update the S3 bucket policy to allow access only from CloudFront, keeping the bucket private.
-![Bucket Policy](<screenshots/S3 Screenshots/Solution/New-CloudFront-policy-to-the-S3-bucket-policy.PNG>)
+![Bucket Policy](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 ### 6. Configure Custom Error Pages
 Configure CloudFront custom error responses so index.html loads correctly when accessing the root URL.
