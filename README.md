@@ -31,7 +31,13 @@ User → CloudFront → Origin Access Control → S3 (Private Bucket)
 ---
 
 ## Project Structure
-aws-s3-static-website
+
+aws-s3-static-website/
+│
+├── terraform/
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
 │
 ├── website/
 │   ├── index.html
@@ -44,7 +50,7 @@ aws-s3-static-website
 │   └── solutions/
 │
 ├── architecture/
-    ├── architecture-public.png
+│   ├── architecture-public.png
 │   └── architecture-private.png
 │
 └── README.md
@@ -122,6 +128,24 @@ Access the website securely using the CloudFront domain name.
 **Conclusion:**
 The recommended architecture is using CloudFront with Origin Access Control and a private S3 bucket.
 
+## Terraform Implementation
+
+This project also includes an Infrastructure as Code (IaC) implementation using Terraform to automate the deployment of the secure architecture (CloudFront + OAC + Private S3).
+
+### Resources Created
+- S3 bucket (private)
+- CloudFront distribution
+- Origin Access Control (OAC)
+- Bucket policy (allow access only from CloudFront)
+
+### How to Deploy
+
+```bash
+terraform init
+terraform plan
+terraform apply
+
+
 ## Problems and Solutions
 
 ### Problem 1 – Access Denied (403)
@@ -139,10 +163,6 @@ The S3 bucket was blocking public access.
 
 **What I Learned:**
 Understanding S3 permissions and public access settings is critical when hosting static websites.
-
-
-
-
 
 ### Problem 2 – Access Denied (403) (CloudFront)
 
