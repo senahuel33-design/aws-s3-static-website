@@ -15,12 +15,12 @@ The project also includes IAM permissions and troubleshooting common errors such
 ### Architecture 1 – Public S3 Website Endpoint
 User → CloudFront → S3 Website Endpoint (Public Bucket)
 
-![Architecture Public](<architecture/architecture-public.PNG>)
+![Architecture Public](<4 - Architecture/architecture-public.PNG>)
 
 ### Architecture 2 – Private S3 with OAC (Recommended)
 User → CloudFront → Origin Access Control → S3 (Private Bucket)
 
-![Architecture Private](<architecture/architecture-private.png>)
+![Architecture Private](<4 - Architecture/architecture-private.png>)
 ---
 
 ## Services Used
@@ -61,57 +61,57 @@ aws-s3-static-website/
 
 ### 1. Create S3 Bucket
 Create an S3 bucket and upload the website files.
-![S3 Bucket](<screenshots/S3 Screenshots/S3 static website files.PNG>)
+![S3 Bucket](<3 - Screenshots/S3 Screenshots/S3 static website files.PNG>)
 
 ### 2. Enable Static Website Hosting
 Enable static website hosting in the S3 bucket properties.
-![Static Hosting](<screenshots/S3 Screenshots/Enable-static-website-hosting-in-the-S3-bucket-properties..PNG>)
+![Static Hosting](<3 - Screenshots/S3 Screenshots/Enable-static-website-hosting-in-the-S3-bucket-properties..PNG>)
 
 ### 3. Configure Public Access
 Disable Block Public Access and configure bucket policy.
-![Public Access](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
+![Public Access](<3 - Screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 ### 4. Access Website via S3 Website Endpoint
 Access the website using the S3 static website endpoint URL.
-![S3 Website](<screenshots/S3 Screenshots/Access-Website-via-S3-Website-Endpoint.PNG>)
+![S3 Website](<3 - Screenshots/S3 Screenshots/Access-Website-via-S3-Website-Endpoint.PNG>)
 
 ### 5. Create CloudFront Distribution (Website Endpoint)
 Create a CloudFront distribution pointing to the S3 bucket.
-![CloudFront Distribution](<screenshots/CloudFront/CloudFront-Distribution.PNG>)
+![CloudFront Distribution](<3 - Screenshots/CloudFront/CloudFront-Distribution.PNG>)
 
 ### 6. Access Website via CloudFront
 Access the website using the CloudFront domain name.
-![Website Working](<screenshots/CloudFront/Access-Website-via-CloudFront.PNG>)
+![Website Working](<3 - Screenshots/CloudFront/Access-Website-via-CloudFront.PNG>)
 
 # Part 2 – Static Website Using CloudFront OAC (Private Bucket – Recommended)
 
 ### 1. Create Private S3 Bucket
 Create a new S3 bucket and keep Block Public Access enabled so the bucket remains private.
-![Private Bucket](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
+![Private Bucket](<3 - Screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 ### 2. Upload Website Files
 Upload the website files (index.html, style.css, error.html) to the private S3 bucket.
-![Upload Files](<screenshots/S3 Screenshots/S3 static website files.PNG>)
+![Upload Files](<3 - Screenshots/S3 Screenshots/S3 static website files.PNG>)
 
 ### 3. Create CloudFront Distribution
 Create a CloudFront distribution and use the S3 REST API endpoint as the origin.
-![CloudFront REST](<screenshots/CloudFront/CloudFront-Distribution.PNG>)
+![CloudFront REST](<3 - Screenshots/CloudFront/CloudFront-Distribution.PNG>)
 
 ### 4. Configure Origin Access Control (OAC)
 Create and attach an Origin Access Control so CloudFront can securely access the private S3 bucket.
-![OAC](<screenshots/CloudFront/Configure-Origin-Access-Control-(OAC).PNG>)
+![OAC](<3 - Screenshots/CloudFront/Configure-Origin-Access-Control-(OAC).PNG>)
 
 ### 5. Update Bucket Policy
 Update the S3 bucket policy to allow access only from CloudFront, keeping the bucket private.
-![Bucket Policy](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
+![Bucket Policy](<3 - Screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 ### 6. Configure Custom Error Pages
 Configure CloudFront custom error responses so index.html loads correctly when accessing the root URL.
-![Error Pages](<screenshots/CloudFront/Configure-Custom-Error-Pages.PNG>)
+![Error Pages](<3 - Screenshots/CloudFront/Configure-Custom-Error-Pages.PNG>)
 
 ### 7. Access Website via CloudFront
 Access the website securely using the CloudFront domain name.
-![CloudFront Website](<screenshots/CloudFront/Access-Website-via-CloudFront.PNG>)
+![CloudFront Website](<3 - Screenshots/CloudFront/Access-Website-via-CloudFront.PNG>)
 
 ---
 
