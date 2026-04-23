@@ -125,6 +125,62 @@ Access the website securely using the CloudFront domain name.
 | Supports HTTPS| Via CloudFront | Yes |
 | Production Ready         | No | Yes |
 
+## Problems and Solutions
+
+### Problem 1 – Access Denied (403)
+When accessing the website, a 403 Access Denied error appeared.
+![403 Error](<screenshots/S3 Screenshots/S3 Mistakes/403 Denied Forbidden.PNG>)
+
+**Cause:**
+The S3 bucket was blocking public access.
+
+### Solution 1 - Access Denied (403)
+- Disabled Block Public Access
+- Added bucket policy to allow public read access
+
+![Solution](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
+
+**What I Learned:**
+Understanding S3 permissions and public access settings is critical when hosting static websites.
+
+### Problem 2 – Access Denied (403) (CloudFront)
+
+### Solution 2 - Access Denied (403) (CloudFront)
+ - S3 bucket policy fixed, I linked the new CloudFront policy to the S3 bucket policy
+   ![Solution](<screenshots/S3 Screenshots/Solution/New-CloudFront-policy-to-the-S3-bucket-policy.PNG>)
+ - Wrong Origin settled in CloudFront
+   ![Solution](<screenshots/S3 Screenshots/Solution/Unnecessary-origin-deleted.PNG>)
+
+**Cause:**
+
+**What I Learned:**
+
+**Solution:**
+---
+
+## What I Learned
+- How to host a static website using Amazon S3
+- Difference between S3 Website Endpoint and S3 REST API
+- How CloudFront works as a CDN
+- How to configure Origin Access Control (OAC)
+- How to configure S3 bucket policies
+- Troubleshooting Access Denied errors
+- Basic AWS architecture design
+- Importance of IAM and permissions
+---
+
+## Future Improvements
+- Add HTTPS using ACM
+- Add custom domain with Route 53
+- Implement CI/CD deployment
+- Add logging and monitoring
+- Use Terraform to automate infrastructure
+
+---
+
+## Author
+Nahuel Egidi
+
 **Conclusion:**
 The recommended architecture is using CloudFront with Origin Access Control and a private S3 bucket.
 
