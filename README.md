@@ -87,7 +87,7 @@ Access the website using the CloudFront domain name.
 
 ### 1. Create Private S3 Bucket
 Create a new S3 bucket and keep Block Public Access enabled so the bucket remains private.
-![Private Bucket](<3 - Screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
+![Private Bucket](<3 - Screenshots/CloudFront/Create Private S3 Bucket.PNG>)
 
 ### 2. Upload Website Files
 Upload the website files (index.html, style.css, error.html) to the private S3 bucket.
