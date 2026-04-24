@@ -129,7 +129,7 @@ Access the website securely using the CloudFront domain name.
 
 ### Problem 1 – Access Denied (403)
 When accessing the website, a 403 Access Denied error appeared.
-![403 Error](<screenshots/S3 Screenshots/S3 Mistakes/403 Denied Forbidden.PNG>)
+![403 Error](<3 - Screenshots/S3 Screenshots/S3 Mistakes/403 Denied Forbidden.PNG>)
 
 **Cause:**
 The S3 bucket was blocking public access.
@@ -138,7 +138,7 @@ The S3 bucket was blocking public access.
 - Disabled Block Public Access
 - Added bucket policy to allow public read access
 
-![Solution](<screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
+![Solution](<3 - Screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
 
 **What I Learned:**
 Understanding S3 permissions and public access settings is critical when hosting static websites.
@@ -147,9 +147,9 @@ Understanding S3 permissions and public access settings is critical when hosting
 
 ### Solution 2 - Access Denied (403) (CloudFront)
  - S3 bucket policy fixed, I linked the new CloudFront policy to the S3 bucket policy
-   ![Solution](<screenshots/S3 Screenshots/Solution/New-CloudFront-policy-to-the-S3-bucket-policy.PNG>)
+   ![Solution](<3 - Screenshots/CloudFront/New-CloudFront-policy-to-the-S3-bucket-policy.PNG>)
  - Wrong Origin settled in CloudFront
-   ![Solution](<screenshots/S3 Screenshots/Solution/Unnecessary-origin-deleted.PNG>)
+   ![Solution](<3 - Screenshots/CloudFront/CloudFront-Distribution-OAC.PNG>)
 
 **Cause:**
 
