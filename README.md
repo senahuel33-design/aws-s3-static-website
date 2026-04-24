@@ -144,6 +144,11 @@ The S3 bucket was blocking public access.
 Understanding S3 permissions and public access settings is critical when hosting static websites.
 
 ### Problem 2 – Access Denied (403) (CloudFront)
+When accessing the website through CloudFront, a 403 Access Denied error appeared.
+
+**Cause:**
+- The S3 bucket was private and CloudFront did not have permission to access it
+- Incorrect origin configuration in CloudFront (wrong endpoint used)
 
 ### Solution 2 - Access Denied (403) (CloudFront)
  - S3 bucket policy fixed, I linked the new CloudFront policy to the S3 bucket policy
@@ -151,10 +156,8 @@ Understanding S3 permissions and public access settings is critical when hosting
  - Wrong Origin settled in CloudFront
    ![Solution](<3 - Screenshots/CloudFront/CloudFront-Distribution-OAC.PNG>)
 
-**Cause:**
-
 **What I Learned:**
-
+Understanding how CloudFront interacts with S3 is essential. A private S3 bucket requires proper permissions (OAC + bucket policy) to allow secure access.
 **Solution:**
 ---
 
