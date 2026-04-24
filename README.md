@@ -103,7 +103,7 @@ Create and attach an Origin Access Control so CloudFront can securely access the
 
 ### 5. Update Bucket Policy
 Update the S3 bucket policy to allow access only from CloudFront, keeping the bucket private.
-![Bucket Policy](<3 - Screenshots/S3 Screenshots/Disable-Block-Public-Access-and-configure-bucket-policy..PNG>)
+![Bucket Policy](<3 - Screenshots/CloudFront/New-CloudFront-policy-to-the-S3-bucket-policy.PNG>)
 
 ### 6. Configure Custom Error Pages
 Configure CloudFront custom error responses so index.html loads correctly when accessing the root URL.
