@@ -160,7 +160,47 @@ When accessing the website through CloudFront, a 403 Access Denied error appeare
 Understanding how CloudFront interacts with S3 is essential. A private S3 bucket requires proper permissions (OAC + bucket policy) to allow secure access.
 **Solution:**
 ---
+## Terraform Implementation
 
+### 🧾 Overview
+This project includes an Infrastructure as Code (IaC) implementation using Terraform to automate the deployment of a secure static website architecture using Amazon S3 and CloudFront.
+
+Unlike the manual setup, this approach allows the infrastructure to be deployed in a consistent, repeatable, and automated way.
+
+---
+
+### 🏗️ Architecture Deployed
+User → CloudFront → Origin Access Control (OAC) → S3 (Private Bucket)
+
+---
+
+### ⚙️ Resources Created
+- S3 bucket (private, public access blocked)
+- S3 bucket objects (website files)
+- CloudFront distribution
+- Origin Access Control (OAC)
+- S3 bucket policy (allow access only from CloudFront)
+
+---
+
+### ▶️ How to Deploy
+
+1. Navigate to the Terraform folder:
+   
+ ### ▶️ How to Deploy
+
+1. Navigate to the Terraform folder:
+```bash
+cd terraform
+terraform init  
+terraform plan  
+terraform apply
+
+### Deployment Proof
+![Terraform Apply](./screenshots/terraform/apply-success.png)
+
+This will provision all AWS resources automatically.
+```
 ## What I Learned
 - How to host a static website using Amazon S3
 - Difference between S3 Website Endpoint and S3 REST API
