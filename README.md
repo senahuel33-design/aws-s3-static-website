@@ -197,7 +197,7 @@ terraform plan
 terraform apply
 
 ### Deployment Proof
-![Terraform Apply](./screenshots/terraform/apply-success.png)
+![Terraform Apply](<1 - Terraform/Apply complete.PNG>)
 
 This will provision all AWS resources automatically.
 ```
