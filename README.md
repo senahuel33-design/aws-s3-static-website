@@ -195,12 +195,12 @@ cd terraform
 terraform init  
 terraform plan  
 terraform apply
-
+```
 ### Deployment Proof
 ![Terraform Apply](<1 - Terraform/Apply complete.PNG>)
 
 This will provision all AWS resources automatically.
-```
+
 ## What I Learned
 - How to host a static website using Amazon S3
 - Difference between S3 Website Endpoint and S3 REST API
