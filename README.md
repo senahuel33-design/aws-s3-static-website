@@ -57,7 +57,7 @@ aws-s3-static-website/
 
 ---
 
-## Setup Steps
+## Setup Steps (Manual Configuration)
 
 ### 1. Create S3 Bucket
 Create an S3 bucket and upload the website files.
@@ -148,7 +148,7 @@ When accessing the website through CloudFront, a 403 Access Denied error appeare
 
 **Cause:**
 - The S3 bucket was private and CloudFront did not have permission to access it
-- Incorrect origin configuration in CloudFront (wrong endpoint used)
+- Incorrect CloudFront origin configuration and missing permissions in the S3 bucket policy.
 
 ### Solution 2 - Access Denied (403) (CloudFront)
  - S3 bucket policy fixed, I linked the new CloudFront policy to the S3 bucket policy
@@ -167,6 +167,7 @@ This project includes an Infrastructure as Code (IaC) implementation using Terra
 
 Unlike the manual setup, this approach allows the infrastructure to be deployed in a consistent, repeatable, and automated way.
 
+This approach eliminates manual configuration errors and allows the infrastructure to be reproducible and version-controlled.
 ---
 
 ### 🏗️ Architecture Deployed
@@ -183,9 +184,6 @@ User → CloudFront → Origin Access Control (OAC) → S3 (Private Bucket)
 
 ---
 
-### ▶️ How to Deploy
-
-1. Navigate to the Terraform folder:
    
  ### ▶️ How to Deploy
 
@@ -223,4 +221,12 @@ This will provision all AWS resources automatically.
 **Conclusion:**
 The recommended architecture is using CloudFront with Origin Access Control and a private S3 bucket.
 
+## Final Result
 
+The website is successfully deployed and accessible via CloudFront:
+
+![Final Website](<3 - Screenshots/CloudFront/Access-Website-via-CloudFront.PNG>)
+
+## Why This Project Matters
+
+This project demonstrates the difference between basic and production-ready cloud architectures, highlighting the importance of security, scalability, and automation in modern cloud environments.
