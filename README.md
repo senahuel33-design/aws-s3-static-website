@@ -199,6 +199,30 @@ terraform apply
 
 This will provision all AWS resources automatically.
 
+### Terraform Challenge – Invalid Principal in Bucket Policy
+
+**Issue:**
+While applying the Terraform configuration, an error occurred:
+
+"MalformedPolicy: Invalid principal in policy"
+
+markdown id="tf-img"
+![Terraform Error](<1 - Terraform/Errors/operation error S3 PutBucketPolicy.PNG>)
+
+
+**Cause:**
+The bucket policy used an incorrect or unsupported principal when trying to grant access to CloudFront.
+
+**Solution:**
+Updated the bucket policy to use the correct CloudFront service principal:
+
+```json
+"Principal": {
+  "Service": "cloudfront.amazonaws.com"
+}
+```
+
+
 ## What I Learned
 - How to host a static website using Amazon S3
 - Difference between S3 Website Endpoint and S3 REST API
